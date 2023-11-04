@@ -1,0 +1,484 @@
+//Repositorios de ayuda
+===================================================================================================================
+
+https://github.com/RodrigoERodriguez/IES21_LP-S3
+https://github.com/RodrigoERodriguez/IES21_LP-Repaso-PROFE-S3
+https://github.com/RodrigoERodriguez/LP-AutoEvaluaciones-S3
+
+===================================================================================================================
+
+PDF y paginas claves
+===================================================================================================================
+
+https://materiales.ies21.edu.ar/264.pdf
+TIMER 79
+CONTROL IMAGELIST 114
+
+===================================================================================================================
+ADO.NET
+
+private OleDbConnection conector;
+private OleDbCommand comando;
+private OleDbDataAdapter adaptador;
+private DataTable tabla;
+
+public Productos()
+        {
+            conector = new OleDbConnection(Properties.Settings.Default.CADENA);
+            comando = new OleDbCommand();
+
+            comando.Connection = conector;
+            comando.CommandType = CommandType.TableDirect;
+            comando.CommandText = "Productos";
+
+            adaptador = new OleDbDataAdapter(comando);
+            tabla = new DataTable();
+            adaptador.Fill(tabla);
+
+            DataColumn[] dc = new DataColumn[1];
+            dc[0] = tabla.Columns["producto"];
+            tabla.PrimaryKey = dc;
+        }
+
+//Grabar nuevo registro
+public void Grabar()
+        {
+            DataRow filabusca = Tabla.Rows.Find(pais);
+            if (filabusca is null)
+            {
+                DataRow fila = Tabla.NewRow();
+                fila[Campo] = pais;
+                fila[Campo] = capital;
+                fila[Campo] = nombre;
+                Tabla.Rows.Add(fila);
+                OleDbCommandBuilder cb = new OleDbCommandBuilder(Adaptador);
+                Adaptador.Update(Tabla);
+            }
+            else
+            {
+                Pais = 0;
+                Nombre = "";
+                Capital = "";
+            }
+        }
+
+STREAM 
+
+//Escribe archivo
+
+           StreamWriter sw = new StreamWriter("LaDoctaVerduras.txt", false);
+            //Sirve para recorrer una coleccion
+            //Coleccion = Vector
+            foreach (string fruta in Frutas)
+            {
+                MessageBox.Show(fruta);
+                sw.WriteLine(fruta);
+            }
+
+            sw.Close();
+            sw.Dispose();
+
+//Lee archivo
+
+            StreamReader sr = new StreamReader("LaDocta.txt");
+            string Linea = "";
+            //Dice cuando llega a fin de archivo    
+            while (sr.EndOfStream != true)
+            {
+                Linea = sr.ReadLine();
+                MessageBox.Show(Linea);
+            }
+            sr.Close();
+            sr.Dispose();
+
+DIAGLOGS
+
+//OpenFileDialog
+
+            openFileDialog1.FileName = "";
+            //Filta los archivos 
+            openFileDialog1.Filter = "Archivos tipo txt |*.txt | Archivos Acrobat |*.pdf";
+            //Elemento para abrir archivos
+            openFileDialog1.ShowDialog();
+            MessageBox.Show(openFileDialog1.FileName);
+
+//SaveFileDialog
+
+            saveFileDialog1.ShowDialog();
+            MessageBox.Show(saveFileDialog1.FileName);
+
+	saveFileDialog1.Filter = "Archivos de texto (*.txt) |*.txt| Archivos de reporte (*.rpt)|*.rpt";
+	saveFileDialog1.FilterIndex = 0;
+	saveFileDialog1.Title = "Guardar Reporte";
+	saveFileDialog1.RestoreDirectory = true;
+	saveFileDialog1.InitialDirectory = "C:";
+	if(saveFileDialog1.ShowDialog() == DialogResult.OK )
+	{
+	  string ruta = saveFileDialog1.FileName;
+	  MessageBox.Show("Archivo de reporte: " + ruta);
+	}
+//FolderBrowserDialog
+
+            //Elemento para guardar archivos
+            folderBrowserDialog1.ShowDialog();
+            MessageBox.Show(folderBrowserDialog1.SelectedPath);
+
+DateTimePicker
+
+Las propiedades “MinDate” y “MaxDate” permiten establecer los valores mínimos y máximos entre los que se podrán elegir las fechas.
+
+//Procedimiento para almacenar y buscar por fechas
+
+            int Localidad= Convert.ToInt32(cbLocalidad.SelectedValue);
+            string Fecha = dtpFecha.Text;
+
+            foreach (DataRow fila in TablaT.Rows)
+            {            
+                if (Localidad == Convert.ToInt32(fila[0]))
+                {
+                    DateTime FechaDT = Convert.ToDateTime(fila["fecha"]);
+                    string FechaDTB = FechaDT.ToString("dd/MM/yyyy");
+                    if (Fecha == FechaDTB)
+                    {
+                        lblMax.Text = fila[2].ToString();
+                        lblMin.Text = fila[3].ToString();
+                    }
+                }
+            }
+
+//Dos tablas
+	Parametros en combo
+	Combo.displaymember
+	combo.valuemember
+	datasource = tabla
+
+inform
+
+	Frutas f = new Frutas();
+	LeGustan lg = new LeGustan();
+
+	DataTable tf = f.getFrutas();
+	DataTable tlg = lg.getLeGustan();
+
+	foreach(DataRow ff in tf.Rows)
+	{
+ 		int can = 0;
+		foreach(DataRow flg in tlg.Rows)
+		{
+			if(ff["fruta"].ToString()==flg["fruta"].ToString())
+			{
+				can++;
+			}
+		}
+	}
+	gv.Rows.Add(ff["nombre"], can);
+
+//Treenode
+	TreeNode abuelo;
+	TreeNode padre;
+	TreeNode hijo;
+
+	abuelo = tv.Nodes.Add("AUTORES");
+
+	DataTable taut = a.getAutores();
+	DataTable tvid = v.getVideos();
+
+	foreach(DataRow faut in taut.Rows)
+	{
+  		padre = abuelo.Nodes.Add(faut["nombre"].ToString());
+ 		foreach(DataRow fvid in tvid.Rows)
+		{
+			if(faut["autor"].ToString()==fvid["autor"].ToString())
+			{
+				hijo = padre.Nodes.Add(fvid["nombre"].ToString());
+				hijo.Tag = fvid["archivo"].ToString();
+			}	
+		}
+	}
+
+//Treenode
+	TreeNode abuelo;
+	TreeNode padre;
+ 	TreeNode hijo;
+
+	abuelo = tv.Nodes.Add("AUTORES");
+
+	DataTable taut = a.getAutores();
+	DataTable tvid = v.getVideos();
+
+	foreach(DataRow faut in taut.Rows)
+	{
+		padre = abuelo.Nodes.Add(faut["nombre"].ToString());
+		foreach(DataRow fvid in tvid.Rows)
+		{
+			if(faut["autor"].ToString()==fvid["autor"].ToString())
+			{
+                		hijo = padre.Nodes.Add(fvid["nombre"].ToString());
+                 	 	hijo.Tag = fvid["archivo"].ToString();
+             	}
+		}
+       }
+ 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Graphics:
+
+Agregar libreria using System.Drawing;
+
+Crear Propiedad Graphics gra;
+
+Designar pictureBox1.CreateGraphics(); en el load
+
+Dibujar Linea           	gra.DrawLine(Pens.Black, 0, 0, 399, 399); Izquierda a derecha
+            			gra.DrawLine(Pens.Black, 399,0,0,399); Derecha a izquierda
+           			gra.DrawLine(Pens.Black, 0, 199, 399,199); Medio horizontal
+            			gra.DrawLine(Pens.Black, 199,0,199,399); Medio vertical
+
+Dibujar Ellipse             	gra.DrawEllipse(Pens.Red, 0, 0, 200, 200); Izquierda arriba
+           		    	gra.DrawEllipse(Pens.Red, 200, 0, 200, 200); Derecha arriba
+            		   	gra.DrawEllipse(Pens.Red, 0, 200, 200, 200); Izquierda abajo
+           		   	gra.DrawEllipse(Pens.Red, 200, 200, 200, 200); Derecha abajo
+
+Dibujar Rectangulo 		gra.DrawRectangle(Pens.Blue, 100, 100, 80, 80);
+
+
+Rellenar 			gra.FillRectangle(Brushes.Orange, 200, 200, 120, 150);
+
+Modificar mi lapiz 		Pen miLapiz = new Pen(Color.Red, 100);
+
+
+Graphics con BD:
+
+Creamos las clases con Ctor y return Table
+
+Agregar libreria using System.Drawing;
+
+Crear Propiedad Graphics gra;
+
+Designar pictureBox1.CreateGraphics(); en el load
+Llamar las clases y tablas
+
+En el boton 
+
+            Font f1 = new Font("Verdana", 8, FontStyle.Bold);
+
+            int x = 0;
+            int y = 0;
+            int nc = 0;
+
+            for (y = 0; y <= pictureBox1.Height - ALTO; y = y + ALTO)
+            {
+                for (x = 0; x <= pictureBox1.Width - ANCHO; x = x + ANCHO)
+                {
+                    nc++;
+
+                    DataRow fco = tco.Rows.Find(nc);
+
+                    if (fco == null)
+                    {
+                        gra.FillEllipse(Brushes.Green, x, y, ANCHO, ALTO);
+                    }else
+                    {
+                       
+                        gra.FillEllipse(Brushes.Red, x, y, ANCHO, ALTO);
+                        DataRow fcl = tcl.Rows.Find(fco["cliente"]);
+
+                        gra.DrawString(fcl["nombre"].ToString(), f1, Brushes.White, x + 5, y + 20);
+
+                    }
+
+                    gra.DrawString(nc.ToString(), f1, Brushes.White, x+15, y+4);
+                }
+            }
+
+PrintDialog con BD:
+
+Creamos la clase
+
+	private OleDbConnection conector;
+        private OleDbCommand comando;
+        private OleDbDataAdapter adaptador;
+        private DataTable tabla;
+
+        public Gente()
+        {
+            conector = new OleDbConnection(Properties.Settings.Default.CADENA);
+            comando = new OleDbCommand();
+
+            comando.Connection = conector;
+            comando.CommandType = CommandType.TableDirect;
+            comando.CommandText = "Gente";
+
+            adaptador = new OleDbDataAdapter(comando);
+            tabla = new DataTable();
+            adaptador.Fill(tabla);
+
+            DataColumn[] dc = new DataColumn[1];
+            dc[0] = tabla.Columns["id"];
+            tabla.PrimaryKey = dc;
+        }
+
+        public DataTable getGente()
+        {
+            return tabla;
+        }
+
+Llamamos la clase en frm
+Llamamos la tabla frm
+Creamos una variable Int
+
+Designar tabla y clase en el load
+
+Agregar libreria using System.Drawing;
+
+Agregar herramientas PrintDialog y PrintPreviewDocument
+
+Designar PrintPreviewDocument.ShowDialog();
+
+Declaramos Fonts  		Font f1 = new Font("Comic Sans MS", 20, FontStyle.Bold);	
+						    Fuente/Tamaño/Estilo de Letra
+
+Declaramos los margenes  	 int y = e.MarginBounds.Top;
+           			 int x = e.MarginBounds.Left;
+
+Escribimos el titulo principal 	e.Graphics.DrawString("Reporte de Clientes", f2, Brushes.Black, x, y);
+							Titulo/Fuente/Lapiz/Margenes
+
+Salto de linea 			y = y + (f2.Height * 2);
+
+Espacio Horizontal 		e.Graphics.DrawString("Correo Electrónico", f3, Brushes.Black, x + 300, y);
+
+Instar el beginPrint en PD	pos = 0;
+
+Estructura repetitiva para mostrar los datos en el PPD.
+
+            while (pos<tg.Rows.Count)
+            {
+                e.Graphics.DrawString(tg.Rows[pos]["full_name"].ToString(), f1, Brushes.Black, x, y);
+                e.Graphics.DrawString(tg.Rows[pos]["email"].ToString(), f1, Brushes.Black, x+ 300, y);
+                y = y + f1.Height;
+
+                if(y>e.MarginBounds.Bottom)
+                {
+                    break;
+                }
+                pos++;
+            }
+
+            if(pos < tg.Rows.Count)
+            {
+                e.HasMorePages = true;
+            }else
+            {
+                e.HasMorePages = false;
+            }
+
+
+Charts:
+
+Mostrar en List o combo
+
+        public void MostrarList(ListBox LB)
+        {
+            LB.DisplayMember = "nombre";
+            LB.ValueMember = "localidad";
+            LB.DataSource = tabla;
+        }
+
+En la clase creamos 
+	
+        public void graficar(int Localidad, Chart Chart)
+        {
+            Cultivos Cultivo = new Cultivos();
+            DataTable tl = Cultivo.GetTabla();
+
+            Chart.Series.Clear();
+            Series serie = Chart.Series.Add("Produccion");
+
+            foreach (DataRow fl in tl.Rows)
+            {
+                object[] clave = new object[2];
+                clave[0] = Localidad;
+                clave[1] = fl["Cultivo"].ToString();
+
+                int Toneladas = 0;
+                DataRow fp = tabla.Rows.Find(clave);
+
+                if (fp != null) Toneladas = (int)fp["toneladas"];
+
+                serie.Points.AddXY(fl["nombre"], Toneladas);
+            }
+        }
+
+En el load instanciamos
+	
+                objProduccion = new Produccion();
+                CBCultivoA.SelectedValue = "";
+                CBLocalidadA.SelectedValue = "";
+                objLocalidades = new Localidades();
+                objLocalidades.Mostrar(CBLocalidadA);
+                objLocalidades.MostrarList(LBLocalidad);
+                objCultivos = new Cultivos();
+                objCultivos.Mostrar(CBCultivoA);
+
+En el boton llamamos
+
+        public void MostrarList(ListBox LB)
+        {
+            LB.DisplayMember = "nombre";
+            LB.ValueMember = "localidad";
+            LB.DataSource = tabla;
+        }
+
+
+
+Subir a una grilla una Base de datos con archivos intercalados
+
+		dgvEncuestas.Columns.Add("Localidades", "Localidades");
+
+                Localidades = new clsLocalidades();
+                Profesiones = new clsProfesiones();
+                Encuestas = new clsEncuestas();
+
+                DataTable tablaProfesiones = Profesiones.getAll();
+                DataTable tablaLocalidades = Localidades.getAll();
+                DataTable tablaEncuestas = Encuestas.getAll();
+
+                foreach (DataRow dr in tablaProfesiones.Rows)
+                {
+                    dgvEncuestas.Columns.Add("Profesion", dr.ItemArray[1].ToString());
+                }
+                foreach (DataRow dr in tablaLocalidades.Rows)
+                {
+                    dgvEncuestas.Rows.Add(dr.ItemArray[1].ToString());
+                }
+
+                foreach (DataRow dr in tablaEncuestas.Rows)
+                {
+                    string varLocalidad = Localidades.BuscarLocalidad(Convert.ToInt32(dr.ItemArray[0]));
+                    string varProfesion = Profesiones.BuscarProfesion(Convert.ToInt32(dr.ItemArray[1]));
+
+                    foreach (DataGridViewTextBoxColumn dcGrilla in dgvEncuestas.Columns)
+                    {
+                        if (varProfesion == dcGrilla.HeaderText)
+                        {
+                            int posicionColumna = dcGrilla.Index;
+
+                            foreach (DataGridViewRow drGrilla in dgvEncuestas.Rows)
+                            {
+                                if (varLocalidad == drGrilla.Cells[0].Value.ToString())
+                                {
+                                    int posicionFila = drGrilla.Index;
+                                    dgvEncuestas.Rows[posicionFila].Cells[posicionColumna].Value = dr["cantidad"];
+                                }
+                            }
+                        }
+                    }
+
+                    dgvEncuestas.AutoResizeColumns();
+                    dgvEncuestas.AutoResizeRows();
+
+
+
+
+

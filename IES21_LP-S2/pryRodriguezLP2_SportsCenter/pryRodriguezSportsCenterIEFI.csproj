@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DACC5F7-D45E-45A0-8B11-F47390ABD477}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>pryRodriguezSportsCenterIEFI</RootNamespace>
+    <AssemblyName>pryRodriguezSportsCenterIEFI</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsActividad.cs" />
+    <Compile Include="clsBarrio.cs" />
+    <Compile Include="clsSocios.cs" />
+    <Compile Include="clsUsuarios.cs" />
+    <Compile Include="frmAccesoActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccesoActividades.Designer.cs">
+      <DependentUpon>frmAccesoActividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccesoBarrios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccesoBarrios.Designer.cs">
+      <DependentUpon>frmAccesoBarrios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccesoSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccesoSocios.Designer.cs">
+      <DependentUpon>frmAccesoSocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarSocio.Designer.cs">
+      <DependentUpon>frmBuscarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDarDeBaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDarDeBaja.Designer.cs">
+      <DependentUpon>frmDarDeBaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioDeSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioDeSesion.Designer.cs">
+      <DependentUpon>frmInicioDeSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSistema.Designer.cs">
+      <DependentUpon>frmInicioSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoDeSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoDeSocios.Designer.cs">
+      <DependentUpon>frmListadoDeSocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoDeudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoDeudores.Designer.cs">
+      <DependentUpon>frmListadoDeudores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoPorActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoPorActividades.Designer.cs">
+      <DependentUpon>frmListadoPorActividades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListadoPorBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoPorBarrio.Designer.cs">
+      <DependentUpon>frmListadoPorBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarActividad.Designer.cs">
+      <DependentUpon>frmModificarActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarSocio.Designer.cs">
+      <DependentUpon>frmModificarSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevaActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevaActividad.Designer.cs">
+      <DependentUpon>frmNuevaActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoBarrio.Designer.cs">
+      <DependentUpon>frmNuevoBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoSocio.Designer.cs">
+      <DependentUpon>frmNuevoSocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReestablecer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReestablecer.Designer.cs">
+      <DependentUpon>frmReestablecer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroDeUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroDeUsuario.Designer.cs">
+      <DependentUpon>frmRegistroDeUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportePorActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePorActividad.Designer.cs">
+      <DependentUpon>frmReportePorActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportePorBarrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePorBarrio.Designer.cs">
+      <DependentUpon>frmReportePorBarrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportePorGanancias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePorGanancias.Designer.cs">
+      <DependentUpon>frmReportePorGanancias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSistema.Designer.cs">
+      <DependentUpon>frmSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAccesoActividades.resx">
+      <DependentUpon>frmAccesoActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccesoBarrios.resx">
+      <DependentUpon>frmAccesoBarrios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccesoSocios.resx">
+      <DependentUpon>frmAccesoSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarSocio.resx">
+      <DependentUpon>frmBuscarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDarDeBaja.resx">
+      <DependentUpon>frmDarDeBaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioDeSesion.resx">
+      <DependentUpon>frmInicioDeSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSistema.resx">
+      <DependentUpon>frmInicioSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoDeSocios.resx">
+      <DependentUpon>frmListadoDeSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoDeudores.resx">
+      <DependentUpon>frmListadoDeudores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoPorActividades.resx">
+      <DependentUpon>frmListadoPorActividades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoPorBarrio.resx">
+      <DependentUpon>frmListadoPorBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarActividad.resx">
+      <DependentUpon>frmModificarActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarSocio.resx">
+      <DependentUpon>frmModificarSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaActividad.resx">
+      <DependentUpon>frmNuevaActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoBarrio.resx">
+      <DependentUpon>frmNuevoBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoSocio.resx">
+      <DependentUpon>frmNuevoSocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReestablecer.resx">
+      <DependentUpon>frmReestablecer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroDeUsuario.resx">
+      <DependentUpon>frmRegistroDeUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePorActividad.resx">
+      <DependentUpon>frmReportePorActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePorBarrio.resx">
+      <DependentUpon>frmReportePorBarrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePorGanancias.resx">
+      <DependentUpon>frmReportePorGanancias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSistema.resx">
+      <DependentUpon>frmSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

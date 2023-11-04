@@ -1,0 +1,21 @@
+D:\Escritorio\DEMO1\bin\Debug\DEMO1.exe.config
+D:\Escritorio\DEMO1\bin\Debug\DEMO1.exe
+D:\Escritorio\DEMO1\bin\Debug\DEMO1.pdb
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.csproj.AssemblyReference.cache
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.Form1.resources
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.Properties.Resources.resources
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.csproj.GenerateResource.cache
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.csproj.CoreCompileInputs.cache
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.exe
+D:\Escritorio\DEMO1\obj\Debug\DEMO1.pdb
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\bin\Debug\DEMO1.exe.config
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\bin\Debug\DEMO1.exe
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\bin\Debug\DEMO1.pdb
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.csproj.AssemblyReference.cache
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.csproj.SuggestedBindingRedirects.cache
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.Form1.resources
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.Properties.Resources.resources
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.csproj.GenerateResource.cache
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.exe
+C:\Users\rodri\Desktop\IES_LP3_Repaso.Profesor\LP3 (2023-05-23)\LP3 (2023-05-23)\DEMO1\obj\Debug\DEMO1.pdb

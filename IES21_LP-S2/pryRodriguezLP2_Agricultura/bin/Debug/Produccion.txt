@@ -1,0 +1,4 @@
+9/22/2022 12:00:00 AM,Dean funes,Lo que digo pablo,1234
+9/22/2022 12:00:00 AM,Cordoba,Lo que digo pablo,1234
+9/22/2022 12:00:00 AM,Capital,Soja, 123
+9/27/2022 12:00:00 AM,Cordoba,Soja,123
